@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LoanOnline.io.vn — So sánh khoản vay online (9 đối tác)</title>
+  <meta name="description" content="LoanOnline.io.vn — Nền tảng so sánh các sản phẩm vay online từ nhiều đối tác (Cashonline, Credilo, Mazilla, Finami, Binixo, Cashspace, Credy, Creditnice, Finloo). Thông tin minh bạch, dễ đối chiếu." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://LoanOnline.io.vn/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="LoanOnline.io.vn — So sánh khoản vay online" />
+  <meta property="og:description" content="So sánh nhanh 9 đối tác vay online. Minh bạch, dễ đối chiếu. CTA sẵn sàng để gắn link tracking." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://LoanOnline.io.vn/" />
+
+  <style>
+    :root{
+      --bg: #070b14;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.7);
+      --muted2: rgba(255,255,255,.58);
+      --border: rgba(255,255,255,.12);
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+
+      --accent: #22c55e;
+      --accent2: #06b6d4;
+      --warn: #f59e0b;
+      --danger: #ef4444;
+
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+      --max: 1160px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: var(--font);
+      color: var(--text);
+      background:
+        radial-gradient(1000px 500px at 10% 0%, rgba(34,197,94,.18), transparent 60%),
+        radial-gradient(900px 520px at 90% 10%, rgba(6,182,212,.18), transparent 55%),
+        radial-gradient(700px 520px at 50% 100%, rgba(34,197,94,.10), transparent 55%),
+        linear-gradient(180deg, #050712, #070b14 55%, #060813);
+      line-height: 1.55;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    button{ font-family: inherit; }
+
+    .container{ width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+
+    .topbar{
+      position: sticky; top:0; z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(7,11,20,.55);
+      border-bottom: 1px solid var(--border);
+    }
+    .topbar-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 14px 0;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width: 240px;
+    }
+    .logo{
+      width: 40px; height: 40px; border-radius: 12px;
+      background:
+        radial-gradient(14px 14px at 30% 35%, rgba(255,255,255,.35), transparent 55%),
+        linear-gradient(135deg, rgba(34,197,94,.95), rgba(6,182,212,.92));
+      box-shadow: 0 12px 28px rgba(34,197,94,.18);
+      border: 1px solid rgba(255,255,255,.18);
+      display:grid; place-items:center;
+      font-weight: 900;
+      letter-spacing: .4px;
+      color:#07101a;
+    }
+    .brand h1{ font-size: 14px; margin:0; letter-spacing:.2px; }
+    .brand p{ margin:0; font-size: 12px; color: var(--muted2); }
+
+    .nav{
+      display:flex; align-items:center; gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav a{
+      font-size: 13px;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+    }
+    .nav a:hover{
+      color: var(--text);
+      border-color: var(--border);
+      background: rgba(255,255,255,.05);
+    }
+
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .dot{ width: 8px; height:8px; border-radius: 999px; background: var(--accent); box-shadow: 0 0 0 4px rgba(34,197,94,.18); }
+
+    .hero{ padding: 42px 0 18px; }
+    .hero-grid{
+      display:grid; gap:18px;
+      grid-template-columns: 1.15fr .85fr;
+      align-items: stretch;
+    }
+    .card{
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero-main{ padding: 22px; overflow:hidden; position: relative; }
+    .hero-main:before{
+      content:"";
+      position:absolute; inset:-80px -60px auto auto;
+      width: 260px; height: 260px;
+      background: radial-gradient(circle at 30% 30%, rgba(34,197,94,.32), transparent 60%),
+                  radial-gradient(circle at 70% 70%, rgba(6,182,212,.25), transparent 55%);
+      filter: blur(2px);
+      opacity:.9;
+      transform: rotate(15deg);
+      pointer-events:none;
+    }
+    .kicker{
+      display:flex; align-items:center; gap:10px;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      flex-wrap: wrap;
+    }
+    .kicker strong{ color: var(--text); font-weight: 700; }
+    .title{
+      font-size: clamp(24px, 2.2vw, 34px);
+      line-height: 1.15;
+      margin: 10px 0 12px;
+      letter-spacing: -0.3px;
+    }
+    .subtitle{
+      margin:0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 62ch;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      font-weight: 650;
+      font-size: 14px;
+      cursor:pointer;
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
+    }
+    .btn:hover{ transform: translateY(-1px); background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.18); }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(34,197,94,.95), rgba(6,182,212,.92));
+      border-color: rgba(255,255,255,.18);
+      color: #07101a;
+      box-shadow: 0 18px 40px rgba(34,197,94,.18);
+    }
+    .btn.sm{ padding: 10px 12px; border-radius: 14px; font-size: 13px; }
+    .btn.ghost{ background: rgba(255,255,255,.04); }
+
+    .hero-side{
+      padding: 18px;
+      display:flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mini{
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    .mini h3{
+      margin: 0 0 6px;
+      font-size: 13px;
+      letter-spacing:.2px;
+      color: rgba(255,255,255,.88);
+    }
+    .mini p{
+      margin: 0;
+      font-size: 12.5px;
+      color: var(--muted2);
+    }
+    .mini ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 12.5px;
+    }
+    .mini li{ margin: 6px 0; }
+
+    .section{ padding: 18px 0; }
+    .section-head{
+      display:flex; align-items: flex-end; justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .section-head h2{
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .section-head .hint{
+      margin: 0;
+      color: var(--muted2);
+      font-size: 12.5px;
+    }
+
+    .controls{
+      display:flex; gap:10px; flex-wrap: wrap;
+      align-items:center; justify-content: space-between;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    .left-controls, .right-controls{
+      display:flex; gap:10px; flex-wrap: wrap; align-items:center;
+    }
+    .input{
+      display:flex; align-items:center; gap:10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      min-width: min(360px, 74vw);
+    }
+    .input span{ color: var(--muted2); font-size: 12px; }
+    .input input{
+      width: 100%;
+      background: transparent;
+      border: 0;
+      outline: none;
+      color: var(--text);
+      font-size: 13.5px;
+    }
+    .select{
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      color: var(--text);
+      font-size: 13.5px;
+      outline: none;
+      cursor:pointer;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .offer{
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.035));
+      box-shadow: 0 18px 50px rgba(0,0,0,.22);
+      position: relative;
+      overflow: hidden;
+      min-height: 188px;
+      display:flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .offer:before{
+      content:"";
+      position:absolute; inset:-90px -80px auto auto;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle at 35% 35%, rgba(34,197,94,.20), transparent 60%),
+                  radial-gradient(circle at 70% 70%, rgba(6,182,212,.16), transparent 58%);
+      transform: rotate(18deg);
+      pointer-events:none;
+    }
+    .offer-top{
+      display:flex; align-items:flex-start; justify-content: space-between; gap: 12px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.04);
+      color: var(--muted);
+      font-size: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .badge b{ color: rgba(255,255,255,.9); font-weight: 750; }
+    .offer-name{
+      margin: 0;
+      font-size: 15px;
+      letter-spacing: .2px;
+      position: relative;
+      z-index: 1;
+    }
+    .offer-desc{
+      margin: 0;
+      color: var(--muted);
+      font-size: 12.5px;
+      position: relative;
+      z-index: 1;
+    }
+    .kv{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 2px;
+      position: relative;
+      z-index: 1;
+    }
+    .kv .item{
+      padding: 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.16);
+      min-height: 58px;
+    }
+    .kv .k{ font-size: 11px; color: var(--muted2); margin-bottom: 4px; }
+    .kv .v{ font-size: 13px; color: rgba(255,255,255,.9); font-weight: 650; }
+    .offer-actions{
+      display:flex; gap:10px; flex-wrap: wrap; margin-top: auto;
+      position: relative; z-index: 1;
+    }
+
+    .table-wrap{
+      overflow:auto;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+    }
+    table{
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      min-width: 920px;
+    }
+    thead th{
+      position: sticky; top: 0;
+      background: rgba(7,11,20,.92);
+      backdrop-filter: blur(10px);
+      z-index: 1;
+    }
+    th, td{
+      text-align: left;
+      padding: 12px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.10);
+      font-size: 13px;
+      color: rgba(255,255,255,.86);
+      vertical-align: top;
+    }
+    th{ font-size: 12px; color: var(--muted2); font-weight: 700; letter-spacing: .2px; }
+    tbody tr:hover td{ background: rgba(255,255,255,.03); }
+
+    .pill{
+      display:inline-flex; align-items:center; gap: 8px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.15);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .pill .s{
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--accent2);
+      box-shadow: 0 0 0 4px rgba(6,182,212,.16);
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .content{ padding: 18px; }
+    .content h3{
+      margin: 0 0 8px;
+      font-size: 14px;
+      letter-spacing: .2px;
+    }
+    .content p, .content li{
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .content ul{ margin: 10px 0 0; padding-left: 18px; }
+    .content li{ margin: 6px 0; }
+
+    details{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      border-radius: 16px;
+      padding: 12px 14px;
+    }
+    details + details{ margin-top: 10px; }
+    summary{
+      cursor:pointer;
+      font-weight: 700;
+      font-size: 13.5px;
+      color: rgba(255,255,255,.88);
+      outline:none;
+    }
+    details p{ margin: 10px 0 0; }
+
+    footer{
+      padding: 26px 0 30px;
+      color: var(--muted2);
+      font-size: 12.5px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: start;
+    }
+    .legal{
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .legal code{
+      font-family: var(--mono);
+      font-size: 12px;
+      color: rgba(255,255,255,.8);
+    }
+
+    @media (max-width: 980px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+      .two-col{ grid-template-columns: 1fr; }
+      .input{ min-width: min(520px, 78vw); }
+      .brand{ min-width: auto; }
+    }
+    @media (max-width: 560px){
+      .container{ width: calc(100% - 26px); }
+      .grid{ grid-template-columns: 1fr; }
+      .nav{ display:none; }
+      .input{ min-width: 0; width: 100%; }
+      .controls{ align-items: stretch; }
+      .left-controls, .right-controls{ width: 100%; justify-content: space-between; }
+      .select{ width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="logo" aria-label="Logo">LO</div>
+          <div>
+            <h1>LoanOnline.io.vn</h1>
+            <p>So sánh khoản vay • 9 đối tác • Minh bạch & dễ đối chiếu</p>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Điều hướng">
+          <a href="#offers">Offers</a>
+          <a href="#comparison">Bảng so sánh</a>
+          <a href="#faq">FAQ</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
+        </nav>
+
+        <div class="chip" title="Trang demo để xin duyệt offer / chờ gắn link">
+          <span class="dot"></span>
+          <span><strong>Trạng thái:</strong> Demo / Pending Links</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <div class="kicker">
+            <span class="pill"><span class="s"></span> Comparison-first</span>
+            <span>•</span>
+            <span><strong>LoanOnline.io.vn</strong> — trang đối chiếu độc lập</span>
+          </div>
+
+          <h2 class="title">So sánh khoản vay online từ 9 đối tác — bố cục chuẩn, thân thiện cho review</h2>
+          <p class="subtitle">
+            Trang tổng hợp thông tin theo cấu trúc: thẻ offer + bảng đối chiếu + FAQ + chính sách (privacy/terms).
+            Nút CTA hiện để “pending” để chờ bạn gắn link tracking sau khi được duyệt.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#offers">Xem 9 offers</a>
+            <a class="btn" href="#comparison">Xem bảng so sánh</a>
+            <button class="btn" id="copyDomainBtn" type="button">Sao chép URL trang</button>
+          </div>
+        </div>
+
+        <aside class="card hero-side">
+          <div class="mini">
+            <h3>Checklist nhanh (cho AM)</h3>
+            <ul>
+              <li>Có privacy/terms rõ ràng.</li>
+              <li>Không “cam kết duyệt”, không “100% giải ngân”.</li>
+              <li>Disclosure affiliate minh bạch.</li>
+              <li>Liên hệ theo domain: support@LoanOnline.io.vn.</li>
+            </ul>
+          </div>
+          <div class="mini">
+            <h3>Trạng thái link</h3>
+            <p>
+              Nút “Đăng ký” đang để <b>#</b>. Khi được duyệt, thay <code>link: "#"</code> cho từng offer là hoàn tất.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="offers">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Danh sách offers</h2>
+          <p class="hint">Tìm kiếm / lọc / sắp xếp. Nội dung mô tả là mẫu, bạn có thể chỉnh khớp yêu cầu advertiser.</p>
+        </div>
+        <p class="hint" id="resultCount"></p>
+      </div>
+
+      <div class="controls" role="region" aria-label="Bộ lọc offers">
+        <div class="left-controls">
+          <div class="input">
+            <span>Search</span>
+            <input id="q" type="search" placeholder="Ví dụ: Credilo, Cashonline, Finloo..." autocomplete="off" />
+          </div>
+          <select class="select" id="tag">
+            <option value="all">Tất cả nhóm</option>
+            <option value="popular">Phổ biến</option>
+            <option value="fast">Xử lý nhanh</option>
+            <option value="flex">Linh hoạt</option>
+          </select>
+        </div>
+
+        <div class="right-controls">
+          <select class="select" id="sort">
+            <option value="name_asc">Sắp xếp: Tên (A→Z)</option>
+            <option value="name_desc">Sắp xếp: Tên (Z→A)</option>
+            <option value="badge">Sắp xếp: Nhãn ưu tiên</option>
+          </select>
+          <button class="btn sm ghost" id="resetBtn" type="button">Reset</button>
+        </div>
+      </div>
+
+      <div style="height:12px"></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section class="section" id="comparison">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Bảng so sánh nhanh</h2>
+          <p class="hint">Đây là khung đối chiếu để reviewer nhìn thấy cấu trúc minh bạch (không claim quá mức).</p>
+        </div>
+      </div>
+
+      <div class="table-wrap" aria-label="Bảng so sánh">
+        <table>
+          <thead>
+            <tr>
+              <th>Offer</th>
+              <th>Đối tượng phù hợp</th>
+              <th>Điểm nổi bật</th>
+              <th>Yêu cầu cơ bản</th>
+              <th>Ghi chú minh bạch</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="privacy">
+    <div class="container">
+      <div class="two-col">
+        <div class="card content">
+          <h3>Privacy Policy (mẫu)</h3>
+          <ul>
+            <li>LoanOnline.io.vn có thể ghi nhận dữ liệu truy cập cơ bản (ví dụ: loại thiết bị, trang đã xem) nhằm cải thiện trải nghiệm.</li>
+            <li>Trang không yêu cầu người dùng nhập thông tin nhạy cảm trực tiếp trên LoanOnline.io.vn; việc nhập liệu (nếu có) diễn ra tại website đối tác.</li>
+            <li>Vui lòng xem chính sách bảo mật của từng đối tác tại trang đăng ký của họ.</li>
+          </ul>
+        </div>
+        <div class="card content">
+          <h3>Affiliate Disclosure</h3>
+          <p>
+            LoanOnline.io.vn có thể nhận hoa hồng giới thiệu khi người dùng đăng ký qua liên kết của đối tác.
+            Điều này không nhất thiết làm tăng chi phí cho người dùng; mục tiêu của trang là hỗ trợ so sánh và định hướng lựa chọn.
+          </p>
+          <p>
+            Chúng tôi không cam kết về tỷ lệ phê duyệt/giải ngân. Kết quả phụ thuộc vào hồ sơ và quy định của bên cung cấp.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="terms">
+    <div class="container">
+      <div class="card content">
+        <h3>Terms & Disclaimer (mẫu)</h3>
+        <ul>
+          <li>Nội dung chỉ mang tính tham khảo, không phải tư vấn tài chính.</li>
+          <li>Không cam kết chắc chắn về việc phê duyệt/giải ngân; mọi quyết định thuộc về đối tác cung cấp.</li>
+          <li>Người dùng cần đọc kỹ điều khoản, phí/lãi (nếu có), thời hạn và chính sách của đối tác trước khi đăng ký.</li>
+          <li>LoanOnline.io.vn có quyền cập nhật nội dung để phản ánh thay đổi từ các đối tác.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>FAQ</h2>
+          <p class="hint">Giúp trang “đầy đủ” và giảm rủi ro review fail.</p>
+        </div>
+      </div>
+
+      <div class="card content">
+        <details>
+          <summary>LoanOnline.io.vn có phải đơn vị cho vay không?</summary>
+          <p>Không. Đây là trang so sánh/tham khảo. Bên cung cấp dịch vụ sẽ xét duyệt theo quy định của họ.</p>
+        </details>
+        <details>
+          <summary>Đăng ký có chắc chắn được duyệt không?</summary>
+          <p>Không có cam kết. Kết quả phụ thuộc hồ sơ và điều kiện của người đăng ký, cũng như chính sách của đối tác.</p>
+        </details>
+        <details>
+          <summary>Trang có thu phí người dùng không?</summary>
+          <p>LoanOnline.io.vn không thu phí trực tiếp. Nếu có phí/lãi/điều khoản, thông tin nằm ở phía đối tác.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="legal">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+            <strong style="color: rgba(255,255,255,.88);">LoanOnline.io.vn — Legal</strong>
+            <span class="pill"><span class="s"></span> Updated</span>
+          </div>
+          <p>
+            Nội dung chỉ mang tính tham khảo. Không phải tư vấn tài chính. Người dùng tự chịu trách nhiệm khi cung cấp thông tin và
+            cần đọc kỹ điều khoản từ đối tác trước khi đăng ký.
+          </p>
+          <p style="margin-bottom:0;">
+            Liên hệ: <code>support@LoanOnline.io.vn</code> • Cập nhật: <span id="updatedAt"></span>
+          </p>
+        </div>
+
+        <div class="legal">
+          <strong style="color: rgba(255,255,255,.88);">Gắn link tracking</strong>
+          <p>
+            Mở file HTML, tìm mảng <code>offers</code> và thay <code>link: "#"</code> thành link tracking tương ứng cho từng offer.
+          </p>
+          <p style="margin-bottom:0;">
+            Khuyến nghị: giữ ngôn từ trung tính, tránh claim tuyệt đối để tăng khả năng duyệt.
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top:14px; color: rgba(255,255,255,.45); font-size: 12px;">
+        © <span id="year"></span> LoanOnline.io.vn. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ====== CONFIG: Offers (chỉ cần thay link: "#" bằng link aff của bạn) ======
+    const offers = [
+      { name:"Cashonline", link:"#", tag:"popular", audience:"Người cần tham khảo lựa chọn phổ biến", highlight:"Quy trình đăng ký đơn giản, giao diện dễ dùng", requirement:"Thông tin định danh cơ bản (tùy đối tác)", note:"Thông tin mang tính tham khảo; điều kiện phụ thuộc đối tác", badge:"Ưu tiên" },
+      { name:"Credilo", link:"#", tag:"fast",    audience:"Người muốn xử lý nhanh (tùy hồ sơ)",        highlight:"Tập trung trải nghiệm đăng ký gọn",          requirement:"Thông tin liên hệ & định danh (tùy đối tác)", note:"Không cam kết phê duyệt; kết quả tùy quy định", badge:"Nhanh" },
+      { name:"Mazilla",  link:"#", tag:"flex",    audience:"Người muốn so sánh linh hoạt nhiều tiêu chí",highlight:"Dễ đối chiếu thông tin trước khi đăng ký", requirement:"Tùy theo form đăng ký của đối tác", note:"Đọc kỹ điều khoản/chi phí (nếu có) trên trang đối tác", badge:"Linh hoạt" },
+      { name:"Finami",   link:"#", tag:"fast",    audience:"Người ưu tiên quy trình rõ ràng",         highlight:"Bố cục đăng ký trực quan",                  requirement:"Theo yêu cầu của đối tác", note:"Điều kiện có thể thay đổi theo thời điểm", badge:"Nhanh" },
+      { name:"Binixo",   link:"#", tag:"flex",    audience:"Người muốn thêm lựa chọn để đối chiếu",   highlight:"Thêm một phương án so sánh",                requirement:"Theo yêu cầu của đối tác", note:"Không phải tư vấn tài chính", badge:"Tuỳ chọn" },
+      { name:"Cashspace",link:"#", tag:"popular", audience:"Người muốn tham khảo thêm đối tác phổ biến",highlight:"Trải nghiệm người dùng thân thiện",          requirement:"Theo form đăng ký đối tác", note:"Kết quả xét duyệt phụ thuộc hồ sơ", badge:"Phổ biến" },
+      { name:"Credy",    link:"#", tag:"popular", audience:"Người cần so sánh nhanh trước khi đăng ký",highlight:"Thông tin trình bày dễ đọc",                requirement:"Theo yêu cầu đối tác", note:"Vui lòng đọc kỹ điều khoản/CS bảo mật của đối tác", badge:"Phổ biến" },
+      { name:"Creditnice",link:"#",tag:"flex",    audience:"Người muốn nhiều lựa chọn để cân nhắc",   highlight:"Bổ sung lựa chọn trong danh sách so sánh",  requirement:"Tùy theo quy định đối tác", note:"Không cam kết lãi suất/chi phí", badge:"Tuỳ chọn" },
+      { name:"Finloo",   link:"#", tag:"fast",    audience:"Người ưu tiên trải nghiệm đăng ký nhanh gọn",highlight:"Luồng thao tác tối giản (tùy đối tác)",    requirement:"Thông tin định danh theo yêu cầu", note:"Điều kiện có thể khác nhau theo từng người dùng", badge:"Nhanh" }
+    ];
+
+    const $ = (id) => document.getElementById(id);
+    const grid = $("grid");
+    const tableBody = $("tableBody");
+    const resultCount = $("resultCount");
+
+    function escapeHtml(str){
+      return String(str).replace(/[&<>"']/g, (m) => ({
+        "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+      }[m]));
+    }
+
+    function badgeColor(label){
+      if(label === "Ưu tiên") return "var(--accent)";
+      if(label === "Nhanh") return "var(--accent2)";
+      if(label === "Phổ biến") return "var(--warn)";
+      return "rgba(255,255,255,.55)";
+    }
+
+    function offerCard(o){
+      const safeName = escapeHtml(o.name);
+      const safeDesc = escapeHtml(o.highlight);
+      const safeAud  = escapeHtml(o.audience);
+      const safeReq  = escapeHtml(o.requirement);
+      const safeNote = escapeHtml(o.note);
+      const safeLink = o.link || "#";
+      const dot = badgeColor(o.badge || "");
+
+      return `
+        <article class="offer" aria-label="Offer ${safeName}">
+          <div class="offer-top">
+            <div>
+              <p class="offer-name">${safeName}</p>
+              <p class="offer-desc">${safeDesc}</p>
+            </div>
+            <span class="badge" title="Nhãn tham khảo">
+              <span style="width:8px;height:8px;border-radius:999px;background:${dot};box-shadow:0 0 0 4px rgba(255,255,255,.10)"></span>
+              <b>${escapeHtml(o.badge || "Offer")}</b>
+            </span>
+          </div>
+
+          <div class="kv" role="list">
+            <div class="item" role="listitem">
+              <div class="k">Đối tượng phù hợp</div>
+              <div class="v">${safeAud}</div>
+            </div>
+            <div class="item" role="listitem">
+              <div class="k">Yêu cầu cơ bản</div>
+              <div class="v">${safeReq}</div>
+            </div>
+          </div>
+
+          <p class="offer-desc" style="margin-top:2px;">
+            <span style="color: rgba(255,255,255,.78); font-weight:650;">Minh bạch:</span>
+            ${safeNote}
+          </p>
+
+          <div class="offer-actions">
+            <a class="btn sm primary" href="${safeLink}" target="_blank" rel="nofollow noopener">
+              Đăng ký (chờ link)
+            </a>
+            <button class="btn sm ghost" type="button" data-copy="${safeName}">
+              Copy tên offer
+            </button>
+          </div>
+        </article>
+      `;
+    }
+
+    function tableRow(o){
+      const safeLink = o.link || "#";
+      return `
+        <tr>
+          <td><strong style="color: rgba(255,255,255,.9)">${escapeHtml(o.name)}</strong><br/>
+              <span class="pill"><span class="s"></span>${escapeHtml(o.badge || "Offer")}</span>
+          </td>
+          <td>${escapeHtml(o.audience)}</td>
+          <td>${escapeHtml(o.highlight)}</td>
+          <td>${escapeHtml(o.requirement)}</td>
+          <td>${escapeHtml(o.note)}</td>
+          <td><a class="btn sm" href="${safeLink}" target="_blank" rel="nofollow noopener">Mở trang</a></td>
+        </tr>
+      `;
+    }
+
+    function getView(){
+      const q = ($("q").value || "").trim().toLowerCase();
+      const tag = $("tag").value;
+      const sort = $("sort").value;
+
+      let list = offers.slice();
+
+      if(tag !== "all") list = list.filter(x => x.tag === tag);
+      if(q) list = list.filter(x => x.name.toLowerCase().includes(q));
+
+      if(sort === "name_asc") list.sort((a,b) => a.name.localeCompare(b.name));
+      else if(sort === "name_desc") list.sort((a,b) => b.name.localeCompare(a.name));
+      else if(sort === "badge"){
+        const order = {"Ưu tiên": 0, "Phổ biến": 1, "Nhanh": 2, "Linh hoạt": 3, "Tuỳ chọn": 4};
+        list.sort((a,b) => (order[a.badge] ?? 99) - (order[b.badge] ?? 99));
+      }
+      return list;
+    }
+
+    function render(){
+      const list = getView();
+      grid.innerHTML = list.map(offerCard).join("");
+      tableBody.innerHTML = list.map(tableRow).join("");
+      resultCount.textContent = `${list.length} / ${offers.length} offers`;
+
+      grid.querySelectorAll("button[data-copy]").forEach(btn => {
+        btn.addEventListener("click", async () => {
+          const text = btn.getAttribute("data-copy");
+          try{
+            await navigator.clipboard.writeText(text);
+            btn.textContent = "Đã copy";
+            setTimeout(()=> btn.textContent = "Copy tên offer", 900);
+          }catch(e){
+            alert("Trình duyệt chặn clipboard. Bạn hãy copy thủ công: " + text);
+          }
+        });
+      });
+    }
+
+    ["q","tag","sort"].forEach(id => $(id).addEventListener("input", render));
+    $("resetBtn").addEventListener("click", () => {
+      $("q").value = "";
+      $("tag").value = "all";
+      $("sort").value = "name_asc";
+      render();
+    });
+
+    $("copyDomainBtn").addEventListener("click", async () => {
+      const url = location.href || "https://LoanOnline.io.vn/";
+      try{
+        await navigator.clipboard.writeText(url);
+        $("copyDomainBtn").textContent = "Đã copy URL";
+        setTimeout(()=> $("copyDomainBtn").textContent = "Sao chép URL trang", 1000);
+      }catch(e){
+        alert("Không thể copy tự động. URL: " + url);
+      }
+    });
+
+    const d = new Date();
+    $("year").textContent = d.getFullYear();
+    $("updatedAt").textContent = d.toLocaleDateString("vi-VN", { year:"numeric", month:"2-digit", day:"2-digit" });
+
+    render();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"LoanOnline.io.vn",
+    "url":"https://LoanOnline.io.vn/",
+    "email":"support@LoanOnline.io.vn"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"LoanOnline.io.vn có phải đơn vị cho vay không?","acceptedAnswer":{"@type":"Answer","text":"Không. Đây là trang so sánh/tham khảo. Bên cung cấp dịch vụ sẽ xét duyệt theo quy định của họ."}},
+      {"@type":"Question","name":"Đăng ký có chắc chắn được duyệt không?","acceptedAnswer":{"@type":"Answer","text":"Không có cam kết. Kết quả phụ thuộc hồ sơ và điều kiện của người đăng ký, cũng như chính sách của đối tác."}},
+      {"@type":"Question","name":"Trang có thu phí người dùng không?","acceptedAnswer":{"@type":"Answer","text":"LoanOnline.io.vn không thu phí trực tiếp. Nếu có phí/lãi/điều khoản, thông tin nằm ở phía đối tác."}}
+    ]
+  }
+  </script>
+</body>
+</html>
