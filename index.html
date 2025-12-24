@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LoanOnline.io.vn — So sánh khoản vay online (7 đối tác)</title>
-  <meta name="description" content="LoanOnline.io.vn — Nền tảng so sánh các sản phẩm vay online từ nhiều đối tác (CashOnline, Credilo, Maizilla, Binixo, CashSpace, Credy, Creditnice). Thông tin minh bạch, dễ đối chiếu." />
+
+  <!-- Keyword riêng (brand-query) để dễ tìm: "loanonline so sánh khoản vay" -->
+  <title>LoanOnline so sánh khoản vay online (7 đối tác) | LoanOnline.io.vn</title>
+  <meta name="description" content="LoanOnline là website so sánh khoản vay online từ 7 đối tác. Đối chiếu minh bạch, ngôn từ trung tính, không cam kết duyệt/giải ngân. Xem và chọn đối tác phù hợp trước khi đăng ký." />
   <meta name="robots" content="index,follow" />
   <meta name="theme-color" content="#0b1220" />
 
-  <!-- Canonical (khuyến nghị dùng chữ thường) -->
+  <!-- Canonical -->
   <link rel="canonical" href="https://loanonline.io.vn/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="LoanOnline.io.vn — So sánh khoản vay online" />
-  <meta property="og:description" content="So sánh nhanh 7 đối tác vay online. Minh bạch, dễ đối chiếu." />
+  <meta property="og:title" content="LoanOnline so sánh khoản vay online (7 đối tác)" />
+  <meta property="og:description" content="Website đối chiếu minh bạch: thẻ offer + bảng so sánh + FAQ + policy." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://loanonline.io.vn/" />
 
@@ -160,7 +162,7 @@
       margin:0 0 18px;
       color: var(--muted);
       font-size: 14px;
-      max-width: 62ch;
+      max-width: 66ch;
     }
 
     .hero-actions{
@@ -462,6 +464,16 @@
       color: rgba(255,255,255,.8);
     }
 
+    /* Accessibility: skip link */
+    .skip{
+      position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip:focus{
+      left: 14px; top: 14px; width:auto; height:auto; padding: 10px 12px;
+      background: rgba(0,0,0,.6); border: 1px solid rgba(255,255,255,.18);
+      border-radius: 12px; z-index: 999;
+    }
+
     @media (max-width: 980px){
       .hero-grid{ grid-template-columns: 1fr; }
       .grid{ grid-template-columns: repeat(2, 1fr); }
@@ -482,6 +494,8 @@
 </head>
 
 <body>
+  <a class="skip" href="#offers">Bỏ qua đến danh sách offers</a>
+
   <header class="topbar">
     <div class="container">
       <div class="topbar-inner">
@@ -489,7 +503,7 @@
           <div class="logo" aria-label="Logo">LO</div>
           <div>
             <h1>LoanOnline.io.vn</h1>
-            <p>So sánh khoản vay • 7 đối tác • Minh bạch & dễ đối chiếu</p>
+            <p>LoanOnline so sánh khoản vay online • 7 đối tác • Minh bạch & dễ đối chiếu</p>
           </div>
         </div>
 
@@ -516,13 +530,15 @@
           <div class="kicker">
             <span class="pill"><span class="s"></span> Comparison-first</span>
             <span>•</span>
-            <span><strong>LoanOnline.io.vn</strong> — trang đối chiếu độc lập</span>
+            <span><strong>LoanOnline</strong> — website đối chiếu trung tính</span>
           </div>
 
-          <h2 class="title">So sánh khoản vay online từ 7 đối tác</h2>
+          <!-- H1 SEO chính: keyword brand + intent -->
+          <h1 class="title">LoanOnline so sánh khoản vay online từ 7 đối tác</h1>
+
           <p class="subtitle">
-            Trang tổng hợp thông tin theo cấu trúc: thẻ offer + bảng đối chiếu + FAQ + chính sách (privacy/terms).
-            Nút CTA đã được gắn link tracking theo từng offer.
+            LoanOnline là website <strong>so sánh khoản vay online</strong>, giúp người dùng đối chiếu các lựa chọn vay tiền online
+            theo cấu trúc rõ ràng (thẻ offer + bảng so sánh + FAQ + chính sách). Trang sử dụng ngôn từ trung tính và không đưa ra cam kết tuyệt đối.
           </p>
 
           <div class="hero-actions">
@@ -534,18 +550,19 @@
 
         <aside class="card hero-side">
           <div class="mini">
-            <h3>Checklist nhanh</h3>
+            <h3>Checklist nhanh (an toàn khi review)</h3>
             <ul>
               <li>Có privacy/terms rõ ràng.</li>
               <li>Không “cam kết duyệt”, không “100% giải ngân”.</li>
               <li>Disclosure affiliate minh bạch.</li>
               <li>Liên hệ theo domain: support@loanonline.io.vn.</li>
+              <li>Link CTA có <code>nofollow sponsored</code>.</li>
             </ul>
           </div>
           <div class="mini">
             <h3>Lưu ý minh bạch</h3>
             <p>
-              Chúng tôi không cam kết tỷ lệ phê duyệt/giải ngân. Kết quả phụ thuộc vào hồ sơ và quy định của đối tác.
+              LoanOnline không phải đơn vị cho vay. Kết quả xét duyệt/giải ngân (nếu có) phụ thuộc vào hồ sơ người dùng và quy định của từng đối tác.
             </p>
           </div>
         </aside>
@@ -558,7 +575,7 @@
       <div class="section-head">
         <div>
           <h2>Danh sách offers</h2>
-          <p class="hint">Tìm kiếm / lọc / sắp xếp. Nội dung mô tả là mẫu, bạn có thể chỉnh khớp yêu cầu advertiser.</p>
+          <p class="hint">Bạn có thể chỉnh mô tả để khớp guideline advertiser. Tránh claim tuyệt đối để tăng khả năng duyệt.</p>
         </div>
         <p class="hint" id="resultCount"></p>
       </div>
@@ -597,7 +614,7 @@
       <div class="section-head">
         <div>
           <h2>Bảng so sánh nhanh</h2>
-          <p class="hint">Khung đối chiếu minh bạch (tránh claim tuyệt đối để tăng khả năng duyệt).</p>
+          <p class="hint">Khung đối chiếu trung tính và minh bạch, phù hợp review network/advertiser.</p>
         </div>
       </div>
 
@@ -625,9 +642,9 @@
         <div class="card content">
           <h3>Privacy Policy (mẫu)</h3>
           <ul>
-            <li>LoanOnline.io.vn có thể ghi nhận dữ liệu truy cập cơ bản (ví dụ: loại thiết bị, trang đã xem) nhằm cải thiện trải nghiệm.</li>
+            <li>LoanOnline có thể ghi nhận dữ liệu truy cập cơ bản (ví dụ: loại thiết bị, trang đã xem) nhằm cải thiện trải nghiệm.</li>
             <li>Trang không yêu cầu người dùng nhập thông tin nhạy cảm trực tiếp trên LoanOnline.io.vn; việc nhập liệu (nếu có) diễn ra tại website đối tác.</li>
-            <li>Vui lòng xem chính sách bảo mật của từng đối tác tại trang đăng ký của họ.</li>
+            <li>Người dùng nên xem chính sách bảo mật của từng đối tác tại trang đăng ký của họ.</li>
           </ul>
         </div>
         <div class="card content">
@@ -637,7 +654,7 @@
             Điều này không nhất thiết làm tăng chi phí cho người dùng; mục tiêu của trang là hỗ trợ so sánh và định hướng lựa chọn.
           </p>
           <p>
-            Chúng tôi không cam kết về tỷ lệ phê duyệt/giải ngân. Kết quả phụ thuộc vào hồ sơ và quy định của bên cung cấp.
+            LoanOnline không cam kết về tỷ lệ phê duyệt/giải ngân. Kết quả phụ thuộc vào hồ sơ và quy định của bên cung cấp.
           </p>
         </div>
       </div>
@@ -663,11 +680,17 @@
       <div class="section-head">
         <div>
           <h2>FAQ</h2>
-          <p class="hint">Giúp trang “đầy đủ” và giảm rủi ro review fail.</p>
+          <p class="hint">FAQ + từ khóa brand giúp Google hiểu site nhanh và dễ truy vấn.</p>
         </div>
       </div>
 
       <div class="card content">
+        <details open>
+          <summary>LoanOnline so sánh khoản vay online là gì?</summary>
+          <p>
+            LoanOnline là website so sánh khoản vay online (7 đối tác), cung cấp thông tin theo dạng đối chiếu. Trang không phải đơn vị cho vay và không đưa ra cam kết chắc chắn.
+          </p>
+        </details>
         <details>
           <summary>LoanOnline.io.vn có phải đơn vị cho vay không?</summary>
           <p>Không. Đây là trang so sánh/tham khảo. Bên cung cấp dịch vụ sẽ xét duyệt theo quy định của họ.</p>
@@ -679,6 +702,10 @@
         <details>
           <summary>Trang có thu phí người dùng không?</summary>
           <p>LoanOnline.io.vn không thu phí trực tiếp. Nếu có phí/lãi/điều khoản, thông tin nằm ở phía đối tác.</p>
+        </details>
+        <details>
+          <summary>Tôi nên đọc gì trước khi đăng ký?</summary>
+          <p>Hãy đọc kỹ điều khoản, chi phí (nếu có), thời hạn và chính sách bảo mật của đối tác tại trang đăng ký trước khi cung cấp thông tin.</p>
         </details>
       </div>
     </div>
@@ -707,7 +734,7 @@
             Các nút CTA đã được gắn link tracking. Nếu cần thay link, mở file HTML và tìm mảng <code>offers</code>.
           </p>
           <p style="margin-bottom:0;">
-            Khuyến nghị: giữ ngôn từ trung tính, tránh claim tuyệt đối để tăng khả năng duyệt.
+            Khuyến nghị: giữ ngôn từ trung tính, tránh claim tuyệt đối để tăng khả năng duyệt và giảm rủi ro bị từ chối.
           </p>
         </div>
       </div>
@@ -726,7 +753,7 @@
         link:"https://rdr.pdlsd.net/in/offer/8508?aid=109137",
         tag:"popular",
         audience:"Người muốn tham khảo lựa chọn phổ biến",
-        highlight:"Quy trình đăng ký đơn giản, giao diện dễ dùng",
+        highlight:"Quy trình đăng ký gọn, giao diện dễ sử dụng",
         requirement:"Thông tin định danh cơ bản (tùy đối tác)",
         note:"Thông tin mang tính tham khảo; điều kiện phụ thuộc đối tác",
         badge:"Ưu tiên"
@@ -736,7 +763,7 @@
         link:"https://rdr.pdlsd.net/in/offer/2929?aid=109137",
         tag:"fast",
         audience:"Người muốn xử lý nhanh (tùy hồ sơ)",
-        highlight:"Tập trung trải nghiệm đăng ký gọn",
+        highlight:"Trải nghiệm đăng ký tối giản, dễ thao tác",
         requirement:"Thông tin liên hệ & định danh (tùy đối tác)",
         note:"Không cam kết phê duyệt; kết quả tùy quy định",
         badge:"Nhanh"
@@ -765,8 +792,8 @@
         name:"CashSpace",
         link:"https://rdr.pdlsd.net/in/offer/3182?aid=109137",
         tag:"popular",
-        audience:"Người muốn tham khảo thêm đối tác phổ biến",
-        highlight:"Trải nghiệm người dùng thân thiện",
+        audience:"Người muốn tham khảo thêm lựa chọn phổ biến",
+        highlight:"Trình bày rõ ràng, dễ đọc trên mobile",
         requirement:"Theo form đăng ký đối tác",
         note:"Kết quả xét duyệt phụ thuộc hồ sơ",
         badge:"Phổ biến"
@@ -776,9 +803,9 @@
         link:"https://rdr.pdlsd.net/in/offer/2988?aid=109137",
         tag:"popular",
         audience:"Người cần so sánh nhanh trước khi đăng ký",
-        highlight:"Thông tin trình bày dễ đọc",
+        highlight:"Thông tin hiển thị gọn gàng, dễ đối chiếu",
         requirement:"Theo yêu cầu đối tác",
-        note:"Vui lòng đọc kỹ điều khoản/CS bảo mật của đối tác",
+        note:"Vui lòng xem chính sách bảo mật của đối tác",
         badge:"Phổ biến"
       },
       {
@@ -808,6 +835,7 @@
       if(label === "Ưu tiên") return "var(--accent)";
       if(label === "Nhanh") return "var(--accent2)";
       if(label === "Phổ biến") return "var(--warn)";
+      if(label === "Linh hoạt") return "rgba(34,197,94,.65)";
       return "rgba(255,255,255,.55)";
     }
 
@@ -865,8 +893,9 @@
       const safeLink = o.link || "#";
       return `
         <tr>
-          <td><strong style="color: rgba(255,255,255,.9)">${escapeHtml(o.name)}</strong><br/>
-              <span class="pill"><span class="s"></span>${escapeHtml(o.badge || "Offer")}</span>
+          <td>
+            <strong style="color: rgba(255,255,255,.9)">${escapeHtml(o.name)}</strong><br/>
+            <span class="pill"><span class="s"></span>${escapeHtml(o.badge || "Offer")}</span>
           </td>
           <td>${escapeHtml(o.audience)}</td>
           <td>${escapeHtml(o.highlight)}</td>
@@ -942,6 +971,7 @@
     render();
   </script>
 
+  <!-- Structured data: Organization -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -952,17 +982,63 @@
   }
   </script>
 
+  <!-- Structured data: WebSite (tăng tín hiệu brand-query) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebSite",
+    "name":"LoanOnline so sánh khoản vay online",
+    "url":"https://loanonline.io.vn/",
+    "potentialAction":{
+      "@type":"SearchAction",
+      "target":"https://loanonline.io.vn/?q={search_term_string}",
+      "query-input":"required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Structured data: FAQ -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"FAQPage",
     "mainEntity":[
-      {"@type":"Question","name":"LoanOnline.io.vn có phải đơn vị cho vay không?","acceptedAnswer":{"@type":"Answer","text":"Không. Đây là trang so sánh/tham khảo. Bên cung cấp dịch vụ sẽ xét duyệt theo quy định của họ."}},
-      {"@type":"Question","name":"Đăng ký có chắc chắn được duyệt không?","acceptedAnswer":{"@type":"Answer","text":"Không có cam kết. Kết quả phụ thuộc hồ sơ và điều kiện của người đăng ký, cũng như chính sách của đối tác."}},
-      {"@type":"Question","name":"Trang có thu phí người dùng không?","acceptedAnswer":{"@type":"Answer","text":"LoanOnline.io.vn không thu phí trực tiếp. Nếu có phí/lãi/điều khoản, thông tin nằm ở phía đối tác."}}
+      {
+        "@type":"Question",
+        "name":"LoanOnline so sánh khoản vay online là gì?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"LoanOnline là website so sánh khoản vay online từ 7 đối tác theo dạng đối chiếu. Trang không phải đơn vị cho vay và không đưa ra cam kết chắc chắn."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"LoanOnline.io.vn có phải đơn vị cho vay không?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Không. Đây là trang so sánh/tham khảo. Bên cung cấp dịch vụ sẽ xét duyệt theo quy định của họ."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Đăng ký có chắc chắn được duyệt không?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Không có cam kết. Kết quả phụ thuộc hồ sơ và điều kiện của người đăng ký, cũng như chính sách của đối tác."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Trang có thu phí người dùng không?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"LoanOnline.io.vn không thu phí trực tiếp. Nếu có phí/lãi/điều khoản, thông tin nằm ở phía đối tác."
+        }
+      }
     ]
   }
   </script>
 </body>
 </html>
+
 
